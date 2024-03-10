@@ -1,0 +1,36 @@
+{
+  "name": "itmonks/starter",
+  "description": "A starter theme from IT Monks.",
+  "version": "1.0",
+  "type": "wordpress-theme",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "IT Monks",
+      "email": "contact@itmonks.com"
+    }
+  ],
+  "config": {
+    "preferred-install": "dist",
+    "allow-plugins": {
+      "composer/installers": true,
+      "squizlabs/php_codesniffer": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    },
+    "sort-packages": true
+  },
+  "require": {
+    "composer/installers": "^1.5 || ^2.0.0"
+  },
+  "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+    "phpcompatibility/phpcompatibility-wp": "^2.1.1",
+    "wp-coding-standards/wpcs": "^2.3.0",
+    "wptrt/wpthemereview": "*"
+  },
+  "scripts": {
+    "format": "./vendor/bin/phpcbf --report=summary,source",
+    "lint": "./vendor/bin/phpcs",
+    "lint_summary": "./vendor/bin/phpcs --report=summary,source"
+  }
+}

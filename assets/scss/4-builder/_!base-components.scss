@@ -1,0 +1,105 @@
+// Base blocks
+.c-block {
+	margin-bottom: clamp-rem(80, 120);
+
+	&--none {
+		margin: 0;
+	}
+
+	&--top,
+	&--both {
+		margin-top: clamp-rem(80, 120);
+	}
+
+	&--top {
+		margin-bottom: 0;
+	}
+
+	&--padding {
+		padding: clamp-rem(40, 70) 0;
+	}
+
+	&--padding-big {
+		padding: clamp-rem(60, 120) 0;
+	}
+}
+
+// Title
+.c-title {
+	display: block;
+	margin-bottom: 1em;
+}
+
+// Image
+.c-image {
+	display: block;
+	line-height: 0;
+	position: relative;
+
+	&:before {
+		content: '';
+		display: block;
+		width: 100%;
+		padding-bottom: 70%;
+	}
+
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+	}
+}
+
+.c-title-stroke {
+	padding-top: rem(5);
+	color: transparent;
+	-webkit-text-stroke: rem(0.5) $color-text;
+	font-size: clamp-rem(40, 80);
+}
+
+.c-a-line {
+	position: relative;
+
+	&:after {
+		position: absolute;
+		content: '';
+		width: 0;
+		height: rem(1);
+		bottom: rem(-1);
+		right: 0;
+		background-color: $color-text;
+		transition: width $time;
+	}
+
+	&__primary:after {
+		background-color: $primary;
+	}
+
+	@include hover {
+		&:after {
+			right: inherit;
+			left: 0;
+			width: 100%;
+		}
+	}
+}
+
+.c-a-underline {
+	text-decoration: underline;
+	text-decoration-thickness: rem(0.5);
+	text-decoration-color: transparent;
+	text-underline-offset: rem(6);
+	transition: text-underline-offset $time, text-decoration-color $time;
+
+	@include hover {
+		text-underline-offset: rem(2);
+		text-decoration-color: $color-text;
+	}
+
+	@include focus-active-max {
+		text-underline-offset: rem(2);
+		text-decoration-color: $color-text;
+	}
+}
