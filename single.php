@@ -16,7 +16,7 @@ $book_category = get_the_terms( get_the_id(), 'book-category' );
 
 <?php get_template_part( 'template-parts/breadcrumbs' ); ?>
 
-	<div class="container post-container">
+	<div class="container">
 		<h1 class="post-title text-center"><?php the_title(); ?></h1>
 
 		<?php if ( has_post_thumbnail() ) : ?>
